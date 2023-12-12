@@ -1,6 +1,7 @@
 package com.addon.productservice.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,10 +29,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductEntity findByProductId(String productId) {
-        return productRepository.findByProductId(productId).stream().findFirst().orElse(null);
+    public Optional<ProductEntity> findByProductId(String productId) {
+         Optional<ProductEntity> first = productRepository.findByProductId(productId).stream().findFirst();
+         return first;
     }
-
+    
     @Override
     @Transactional
     public ProductEntity update(ProductEntity productEntity) {

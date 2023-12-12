@@ -1,6 +1,6 @@
-package com.addon.productservice.controller;
-
+package com.addon.productservice.controller
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,7 +36,8 @@ public class ProuductController {
 
     @GetMapping("/{prodId}")
     public ProductEntity getById(@PathVariable(name = "prodId") String productId) {
-        return productservice.findByProductId(productId);
+         Optional<ProductEntity> byProductId = productservice.findByProductId(productId);
+         return byProductId.isPresent()?byProductId.get():null;
     }
 
     @PutMapping()
