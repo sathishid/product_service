@@ -1,4 +1,4 @@
-package com.addon.productservice.controller
+package com.addon.productservice.controller;
 import java.util.List;
 import java.util.Optional;
 
