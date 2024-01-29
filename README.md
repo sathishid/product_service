@@ -1,5 +1,5 @@
 # product_service
-One of the service for Architecture leaning
+One of the service for Architecture learning
 
 
 # Git Commands used
